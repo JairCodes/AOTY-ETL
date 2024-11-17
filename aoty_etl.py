@@ -36,10 +36,10 @@ def transform_data(data):
     # Drop rows with missing 'release_date' after conversion
     data = data.dropna(subset=['release_date'])
     
-    # Filter albums with a user score greater than 80
+    # Filter albums with a user score greater than set threshold
     data = data[data['user_score'] > 75]
     
-    # Filter albums released after 2010
+    # Filter albums released date
     data = data[data['release_date'].dt.year > 2013]
     
     # Filter albums by a specific artist
